@@ -1,0 +1,62 @@
+#user{
+    padding: 3em;
+}
+
+#user-item-container{
+    margin-top: 1em;
+}
+
+.create-user-button{
+    margin-bottom: 0.5em;
+    font-size: 20px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 1em;
+    color: black;
+}
+
+.create-user-button:hover{
+    color: black;
+    text-decoration: none;
+    background-color:rgb(245, 245, 245);
+}
+
+.user-icon{
+    font-size: 35px;
+    margin-right: 20px;
+    color: gray;
+}
+
+.user-item{
+    box-shadow: 0px 1px 10px 3px rgba(180, 180, 180, 0.5);
+    border-radius: 1em;
+    width: 100%;
+    padding: 1em;
+    margin-bottom: 1em;
+    cursor: pointer;
+    display: flex;
+}
+
+.user-item:hover{
+    background-color: rgb(245, 245, 245);
+}
+
+.user-email{
+    color: gray;
+}
+
+.form{
+    margin-top: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.submit-button{
+    margin-top: 2em;
+    width: 100%;
+}
+
+.error-text{
+    color: red;
+}

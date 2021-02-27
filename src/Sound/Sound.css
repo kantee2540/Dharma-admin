@@ -1,0 +1,42 @@
+#sound{
+    padding: 3em;
+}
+
+#sound-container{
+    margin-top: 1em;
+}
+
+.create-sound-button{
+    margin-bottom: 0.5em;
+    font-size: 20px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 1em;
+}
+
+.create-sound-button:hover{
+    color: navy;
+    background-color:rgb(245, 245, 245);
+}
+
+.sound-item{
+    box-shadow: 0px 1px 10px 3px rgba(180, 180, 180, 0.5);
+    border-radius: 1em;
+    width: 100%;
+    margin-bottom: 1em;
+    cursor: pointer;
+    display: flex;
+    min-height: 150px;
+    overflow: hidden;
+}
+
+.sound-item-detail{
+    padding: 1em;
+}
+
+.sound-img{
+    width: 120px;
+    height: 100%;
+    object-fit: cover;
+}
