@@ -7,6 +7,7 @@
 }
 
 .create-sound-button{
+    color: black;
     margin-bottom: 0.5em;
     font-size: 20px;
     cursor: pointer;
@@ -16,8 +17,14 @@
 }
 
 .create-sound-button:hover{
-    color: navy;
+    color: black;
+    text-decoration: none;
     background-color:rgb(245, 245, 245);
+}
+
+.break-line{
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 .sound-item{
@@ -27,8 +34,15 @@
     margin-bottom: 1em;
     cursor: pointer;
     display: flex;
-    min-height: 150px;
+    min-height: 170px;
     overflow: hidden;
+    color: black;
+}
+
+.sound-item:hover{
+    color: black;
+    text-decoration: none;
+    background-color:rgb(245, 245, 245);
 }
 
 .sound-item-detail{
@@ -39,4 +53,79 @@
     width: 120px;
     height: 100%;
     object-fit: cover;
+}
+
+.sound-text{
+    max-height: 95px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sound-date{
+    color: gray;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.sound-title{
+    font-size: 20px;
+    margin-bottom: 1em;
+}
+
+.cover-image{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.custom-file-upload {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 0.5em;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.select-image{
+    margin-top: 1em;
+    text-align: right;
+}
+
+.sound-data-item{
+    padding: 1em;
+    box-shadow: 0px 1px 10px 3px rgba(180, 180, 180, 0.5);
+    margin-bottom: 1em;
+    border-radius: 1em;
+    min-height: 100px;
+}
+
+.preview_button{
+    color: black;
+}
+
+.preview_button:hover{
+    color: dodgerblue;
+}
+
+.delete_button{
+    cursor: pointer;
+    color: black;
+}
+
+.delete_button:hover{
+    color: red;
+    
+}
+
+.not-found{
+    text-align: center;
+}
+
+.not-found-icon{
+    font-size: 50px;
+    color: gray;
+}
+
+.not-found-title{
+    font-size: 35px;
 }

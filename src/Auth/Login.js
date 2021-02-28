@@ -40,7 +40,7 @@ function Login() {
         <div className="container">
             <div id="login">
                 <div className="img-container">
-                    <img src={logo} className="main-logo"/>
+                    <img src={logo} className="main-logo" alt="Logo"/>
                 </div>
                 
                 <Form 

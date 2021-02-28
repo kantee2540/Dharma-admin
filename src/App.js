@@ -8,8 +8,14 @@ import Sidebar from './Library/Sidebar'
 import Home from './Home/Home'
 import Login from './Auth/Login'
 import Sound from './Sound/Sound'
+import SoundDetail from './Sound/SoundDetail'
+import CreatePackage from './Sound/CreatePackage'
+import About from './About/About'
 import User from './User/User'
 import UserForm from './User/UserForm'
+import dayjs from 'dayjs'
+import 'dayjs/locale/th'
+import buddhistEra from 'dayjs/plugin//buddhistEra'
 
 function checkUserAuthen(){
   checkUser(
@@ -25,6 +31,8 @@ function checkUserAuthen(){
 
 function App() {
   useEffect(()=>{
+    dayjs.locale("th")
+    dayjs.extend(buddhistEra)
     let token = localStorage.getItem('token')
     if(token !== null){
       checkUserAuthen()
@@ -73,8 +81,17 @@ function AppStack({ children, isAuth, ...rest }){
               <Route path="/" exact>
                 <Home/>
               </Route>
-              <Route path="/sound">
+              <Route path="/sound" exact>
                 <Sound/>
+              </Route>
+              <Route path="/sound/create">
+                <CreatePackage/>
+              </Route>
+              <Route path="/sound/:soundId">
+                <SoundDetail/>
+              </Route>
+              <Route path="/about">
+                <About/>
               </Route>
               <Route path="/user" exact>
                 <User/>

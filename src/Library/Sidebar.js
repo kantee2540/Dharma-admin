@@ -28,7 +28,7 @@ function Sidebar(props) {
                     <SidebarItem title="หน้าแรก" to="/" onClick={()=>props.callback()}/>
                     <SidebarItem title="ปกหน้าหลัก" to="/cover" onClick={()=>props.callback()}/>
                     <SidebarItem title="เสียง" to="/sound" onClick={()=>props.callback()}/>
-                    <SidebarItem title="เกี่ยวกับ" to="/about" onClick={()=>props.callback()}/>
+                    {/* <SidebarItem title="เกี่ยวกับ" to="/about" onClick={()=>props.callback()}/> */}
                     <SidebarItem title="จัดการบัญชีผู้ใช้" to="/user" onClick={()=>props.callback()}/>
                     <hr/>
                     <SidebarItem 

@@ -2,8 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { Row, Col } from 'react-bootstrap'
 import { listSound } from '../Network/Sound'
 import { baseResource } from '../Network/Config'
+import { Link } from 'react-router-dom'
 import Load from '../Library/Load'
+import Default from '../assets/images/default_image.png'
 import './Sound.css'
+import dayjs from 'dayjs'
 
 function Sound() {
     const [isLoading, setLoading] = useState(false);
@@ -33,17 +36,19 @@ function Sound() {
         <div id="sound">
             <h1>ฟังเสียง</h1>
             <div id="sound-container">
-                <div className="create-sound-button">
+                <Link className="create-sound-button" to="/sound/create">
                    <i className="fas fa-plus" style={{marginRight: 15}}></i>
                    สร้างชุดเสียง
-               </div>
+               </Link>
                <div>
                    <Row>
                    { items.map((item, key)=>
                     <Col lg={6} xl={4} key={key}>
                         <SoundItem
                         title={item.sound_package_name}
-                        imageUri={baseResource+ "/" + item.sound_package_folder + "/" + item.package_image}
+                        imageUri={item.package_image !== null ?
+                            baseResource+ "/" + item.sound_package_folder + "/" + item.package_image : null}
+                        to={"/sound/"+item.id}
                         />
                     </Col>
                     
@@ -57,13 +62,20 @@ function Sound() {
 }
 
 function SoundItem(props){
+    let date = dayjs(props.date).format("DD MMMM BBBB")
     return(
-        <div className="sound-item">
+        <Link className="sound-item" to={props.to}>
             <div className="sound-img-container">
-                <img src={props.imageUri} className="sound-img"/>
+                <img src={props.imageUri !== null ? props.imageUri : Default} 
+                className="sound-img"
+                alt="image"/>
             </div>
-            <div className="sound-item-detail">{props.title}</div>
-        </div>
+            <div className="sound-item-detail">
+                <div className="sound-text">{props.title}</div>
+                <div className="sound-date">{date}</div>
+            </div>
+            
+        </Link>
     )
 }
 
