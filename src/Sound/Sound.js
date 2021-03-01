@@ -49,6 +49,7 @@ function Sound() {
                         imageUri={item.package_image !== null ?
                             baseResource+ "/" + item.sound_package_folder + "/" + item.package_image : null}
                         to={"/sound/"+item.id}
+                        date={item.created_at}
                         />
                     </Col>
                     
@@ -62,7 +63,7 @@ function Sound() {
 }
 
 function SoundItem(props){
-    let date = dayjs(props.date).format("DD MMMM BBBB")
+    let date = dayjs(props.date).format("D MMMM BBBB")
     return(
         <Link className="sound-item" to={props.to}>
             <div className="sound-img-container">

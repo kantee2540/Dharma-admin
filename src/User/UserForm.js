@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Form, Button, Row, Col } from 'react-bootstrap'
 import { createUser } from '../Network/User'
 import { useHistory } from 'react-router-dom'
+import { AlertContext } from '../Library/Alert'
 import Load from '../Library/Load'
 import './User.css'
 
 function UserForm() {
     const history = useHistory();
+    const alert = useContext(AlertContext);
     const [isLoading, setLoading] = useState(false);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -19,6 +21,7 @@ function UserForm() {
             createUser(email, name, password,
                 (data)=>{
                     setLoading(false)
+                    alert.setMessages("สร้างบัญชีผู้ใช้แล้ว")
                     history.push('/user')
                 },
                 (error)=>{

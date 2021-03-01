@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Row, Col, Form, Button } from 'react-bootstrap'
 import { createSound } from '../Network/Sound'
 import { useHistory } from 'react-router-dom'
+import { AlertContext } from '../Library/Alert'
 import Load from '../Library/Load'
 import './Sound.css'
 
 function CreatePackage() {
+    const alert = useContext(AlertContext)
     const history = useHistory();
     const [isLoading, setLoading] = useState(false);
     const [name, setName] = useState('');
@@ -15,6 +17,7 @@ function CreatePackage() {
         createSound(name,
             ()=>{
                 setLoading(false);
+                alert.setMessages("สร้างชุดไฟล์เสียงแล้ว")
                 history.push("/sound");
             },
             (error)=>{

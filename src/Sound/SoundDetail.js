@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react'
-import { Button, Form, Row, Col, Table, Modal } from 'react-bootstrap'
+import React, { useState, useEffect, useContext } from 'react'
+import { Button, Form, Row, Col, Table } from 'react-bootstrap'
 import { useParams, useHistory } from 'react-router-dom'
 import { soundDetail, uploadFileCover, updateName, uploadSound, deleteSoundFile, deletePackage } from '../Network/Sound'
 import { baseResource } from '../Network/Config'
+import { AlertContext } from '../Library/Alert'
 import dayjs from 'dayjs'
 import Load from '../Library/Load'
 import DefaultImage from '../assets/images/default_image.png'
@@ -11,6 +12,7 @@ import './Sound.css'
 function SoundDetail() {
     let { soundId } = useParams()
     const history = useHistory();
+    const alert = useContext(AlertContext);
     const [isLoading, setLoading] = useState(false);
     const [detail, setDetail] = useState({package_image: '', sound_package_name: ''});
     const [name, setName] = useState('');
@@ -46,6 +48,7 @@ function SoundDetail() {
         uploadFileCover(detail.id, selectedImage,
             ()=>{
                 setImage(null);
+                alert.setMessages("เปลี่ยนปกชุดไฟล์เสียงสำเร็จ")
                 fetchData();
             },
             (error)=>{
@@ -59,6 +62,7 @@ function SoundDetail() {
         updateName(detail.id, name,
             ()=>{
                 fetchData();
+                alert.setMessages("เปลี่ยนชื่อชุดไฟล์เสียงสำเร็จ")
             },
             (error)=>{
                 alert(error.message)
@@ -72,6 +76,7 @@ function SoundDetail() {
         uploadSound(detail.id, selectedSound,
             ()=>{
                 fetchData()
+                alert.setMessages("อัพโหลดไฟล์เสียงสำเร็จ")
             },
             (error)=>{
                 alert(error.message)
@@ -85,6 +90,7 @@ function SoundDetail() {
         deleteSoundFile(detail.id, soundId,
             ()=>{
                 fetchData()
+                alert.setMessages("ลบไฟล์เสียงแล้ว")
             },
             (error)=>{
                 alert(error.message)
@@ -98,6 +104,7 @@ function SoundDetail() {
         deletePackage(detail.id,
             ()=>{
                 history.push("/sound");
+                alert.setMessages("ลบชุดไฟล์เสียงสำเร็จ")
             },
             (error)=>{
                 alert(error.message)
@@ -189,7 +196,7 @@ function SoundDetail() {
                             }}
                             required/>
                         </Col>
-                        <Col xs={6} md={4} lg={3} style={{textAlign: 'center'}}>
+                        <Col xs={6} md={4} lg={3} style={{textAlign: 'right'}}>
                             <Button type="submit">อัพโหลดเสียง</Button>
                         </Col>
                     </Row>

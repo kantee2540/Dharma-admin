@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import './Sidebar.css'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { AuthContext } from '../Auth/AuthContext'
 import logo from '../assets/images/logo.png'
 
@@ -25,7 +25,7 @@ function Sidebar(props) {
                 </div>
                 <div id="sidebar-item-container">
                     <hr/>
-                    <SidebarItem title="หน้าแรก" to="/" onClick={()=>props.callback()}/>
+                    <SidebarItem title="หน้าแรก" to="/" onClick={()=>props.callback()} exact/>
                     <SidebarItem title="ปกหน้าหลัก" to="/cover" onClick={()=>props.callback()}/>
                     <SidebarItem title="เสียง" to="/sound" onClick={()=>props.callback()}/>
                     {/* <SidebarItem title="เกี่ยวกับ" to="/about" onClick={()=>props.callback()}/> */}
@@ -34,7 +34,11 @@ function Sidebar(props) {
                     <SidebarItem 
                     title="ออกจากระบบ" 
                     to="/login"
-                    onClick={()=>authContext.signout()}/>
+                    onClick={()=>{
+                        if(window.confirm("ต้องการออกจากระบบหรือไม่?")){
+                            authContext.signout()
+                        }else{ }
+                    }}/>
                 </div>
             </div>
         </div>
@@ -44,12 +48,14 @@ function Sidebar(props) {
 
 function SidebarItem(props){
     return(
-        <Link 
+        <NavLink
+        activeClassName="active-sidebar"
         className="sidebar-item" 
         to={props.to} 
+        exact={props.exact}
         onClick={props.onClick}>
             {props.title}
-        </Link>
+        </NavLink>
     )
 }
 

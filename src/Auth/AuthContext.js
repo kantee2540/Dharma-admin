@@ -3,7 +3,6 @@ import { login, handlerError } from '../Network/AuthNetwork'
 
 const AuthContext = createContext();
 
-
 function useProvideAuth(){
     const [user, setUser] = useState(null);
 

@@ -1,0 +1,71 @@
+#cover{
+    padding: 3em;
+}
+
+.picture-item{
+    cursor: pointer;
+    margin-bottom: 1em;
+}
+
+.pic-img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+
+}
+
+.select-button{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.unselect{
+    background-color: rgba(200, 200, 200, 0.7);
+}
+
+.unselect:hover{
+    background-color: rgba(200, 200, 200, 1);
+}
+
+.selected{
+    color: white;
+    background-color: dodgerblue;
+}
+
+.delete-button{
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+}
+
+.delete-button:hover{
+    color: red;
+}
+
+.upload-button{
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 1em;
+}
+
+.upload-button:hover{
+    color: black;
+    text-decoration: none;
+    background-color:rgb(245, 245, 245);
+}

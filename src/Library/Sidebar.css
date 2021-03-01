@@ -40,3 +40,7 @@
     color: black;
     background-color: rgba(0, 0, 0, 0.1);
 }
+
+.active-sidebar{
+    background-color: rgba(0, 0, 0, 0.05);
+}

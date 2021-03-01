@@ -1,0 +1,20 @@
+#alert{
+    box-shadow: 0px 1px 10px 3px rgba(180, 180, 180, 0.5);
+    background-color: whitesmoke;
+    position: fixed;
+    z-index: 100;
+    top: 5px;
+    right: 0px;
+    overflow: hidden;
+    transition: width 0.4s ease;
+    border-radius: 8px 0px 0px 8px;
+}
+
+.alert-content{
+    padding: 1em;
+    font-size: 20px;
+}
+
+.alert-icon{
+    margin-right: 10px;
+}

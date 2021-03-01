@@ -49,7 +49,7 @@ function Login() {
                     submit();
                 }}>
                     <Form.Group>
-                        <Form.Label>บัญชีผู้ใช้</Form.Label>
+                        <Form.Label>อีเมล</Form.Label>
                         <Form.Control 
                         value={username}
                         onChange={(e)=>setUsername(e.target.value)}/>

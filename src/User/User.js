@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import './User.css'
 import { Modal, Row, Col, Form, Button, Alert } from 'react-bootstrap'
 import { listUser, editUser } from '../Network/User'
 import { Link } from 'react-router-dom'
+import { AlertContext } from '../Library/Alert'
 import Load from '../Library/Load'
 
 function User() {
+    const alert = useContext(AlertContext);
     const [isLoading, setLoading] = useState(false);
     const [isUserShow, setUserShow] = useState(false);
     const [selectedUser, setSelectedUser] = useState({name: '', email: '', userId: ''});
@@ -34,11 +36,13 @@ function User() {
         editUser(email, name, selectedUser.userId,
             (data)=>{
                 callback(data)
+                alert.setMessages("แก้ไขข้อมูลผู้ใช้งานสำเร็จ")
             },
             (error)=>{
                 alert(error.message)
                 setModalLoad(false)
-            })
+            }
+        )
     }
 
     return (
