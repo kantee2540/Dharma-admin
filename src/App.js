@@ -44,7 +44,7 @@ function App() {
 
   return (
     <ProvideAuth>
-      <BrowserRouter>
+      <BrowserRouter basename="/admin">
         <Switch>
           <Route path="/login">
             <Login/>
