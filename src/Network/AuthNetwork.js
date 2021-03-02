@@ -26,7 +26,10 @@ function login(username, password, callback, errorCallback){
     axios({
         url: url,
         method: 'POST',
-        data: formData
+        data: formData,
+        headers:{
+            "Content-Type": "multipart/form-data",
+        }
     })
     .then((response)=>{
         let token = response.data.token

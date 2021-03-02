@@ -35,7 +35,7 @@ function uploadCover(file, callback, errorCallback){
         method: 'POST',
         data: bodyForm,
         headers:{
-            "Content-Type": "application/json",
+            "Content-Type": "multipart/form-data",
             'Authorization': token
         }
     })
