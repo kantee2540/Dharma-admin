@@ -69,7 +69,7 @@ function SoundItem(props){
             <div className="sound-img-container">
                 <img src={props.imageUri !== null ? props.imageUri : Default} 
                 className="sound-img"
-                alt="image"/>
+                alt={props.title}/>
             </div>
             <div className="sound-item-detail">
                 <div className="sound-text">{props.title}</div>

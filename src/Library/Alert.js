@@ -1,4 +1,4 @@
-import { faCheckCircle, faI, faInfoCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle, faInfoCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { createContext, useState, useEffect } from 'react'
 import "./Alert.css"
@@ -40,6 +40,9 @@ function AlertModal(props){
             break
         case("ERROR"):
             icon = { icon: faTimesCircle, color: 'red' }
+            break
+        default:
+            icon = { icon: faInfoCircle, color: 'gray' }
             break
     }
 

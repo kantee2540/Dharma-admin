@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 import { AuthContext } from '../Auth/AuthContext'
 import logo from '../assets/images/logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCompactDisc, faHome, faImages, faInfoCircle, faSignOut, faUser, faVolumeHigh } from '@fortawesome/free-solid-svg-icons'
+import { faCompactDisc, faHome, faImages, faInfoCircle, faSignOut, faUser } from '@fortawesome/free-solid-svg-icons'
 
 function getName(){
     let name = localStorage.getItem("name");
@@ -26,7 +26,7 @@ function Sidebar(props) {
         <div id="sidebar" className={props.className} style={props.style}>
             <div className="container-inner">
                 <div className='sidebar-head'>
-                    <img src={logo} id="logo"/>
+                    <img src={logo} id="logo" alt='logo'/>
                     <div className="name-text">
                         <b>{userName}</b>
                     </div>
@@ -55,7 +55,7 @@ function Sidebar(props) {
                     }}/>
                     <hr/>
                     <div className="bottom-view">
-                        <a href="http://xn--12ca1b1ad6at4bbyx3hva0b9qja8g.com/" target="_blank">พระไตรปิฎกใกล้ตัว.com</a><br/>
+                        <a href="http://xn--12ca1b1ad6at4bbyx3hva0b9qja8g.com/" target="_blank" rel="noreferrer noopener">พระไตรปิฎกใกล้ตัว.com</a><br/>
                         สงวนลิขสิทธิ์ 2565
                     </div>
                 </div>

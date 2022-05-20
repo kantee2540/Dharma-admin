@@ -22,8 +22,6 @@ function SoundDetail() {
     const currentPath = baseResource+ "/" + detail.sound_package_folder + "/"
     const currentImage = detail.sound_package_folder !== undefined ? currentPath + detail.package_image : DefaultImage
 
-    useEffect(() => fetchData(), [])
-
     const fetchData = () =>{
         setLoading(true)
         soundDetail(soundId,
@@ -112,6 +110,11 @@ function SoundDetail() {
             })
     }
 
+    useEffect(() =>{ 
+        fetchData() 
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []) 
+
     return (
         <>
         {isLoading ? <Load/>:null}
@@ -142,10 +145,11 @@ function SoundDetail() {
             <div>
                 <div className="sound-title"><b>รูปปกของชุดเสียง</b></div>
                 { detail.package_image !== null ?
-                <a href={currentImage} target="_blank">
+                <a href={currentImage} target="_blank" rel="noreferrer noopener">
                     <img 
                     className="cover-image"
-                    src={currentImage}/>
+                    src={currentImage}
+                    alt='previewimage'/>
                 </a>
                 : null
                 }
@@ -223,7 +227,8 @@ function SoundDetail() {
                                 <a 
                                 href={currentPath + item.sound_file} 
                                 className="preview_button"
-                                target="_blank">
+                                target="_blank"
+                                rel="noreferrer noopener">
                                     <i className="fas fa-play-circle"></i>
                                 </a>
                             </td>

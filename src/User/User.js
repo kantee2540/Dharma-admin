@@ -15,9 +15,6 @@ function User() {
     const [email, setEmail] = useState('');
     const [items, setItems] = useState([]);
     const [isModalLoad, setModalLoad] = useState(false);
-    useEffect(() => {
-        fetchData()
-    }, [])
 
     const fetchData = () =>{
         setLoading(true);
@@ -44,6 +41,11 @@ function User() {
             }
         )
     }
+
+    useEffect(() => {
+        fetchData()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     return (
         <>

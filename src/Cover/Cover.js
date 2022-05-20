@@ -12,10 +12,6 @@ function Cover() {
     const fileInput = useRef(null);
     const alert = useContext(AlertContext);
 
-    useEffect(() => {
-        fetchData()
-    }, [])
-
     const fetchData = () =>{
         setLoading(true);
         listCover(
@@ -70,6 +66,11 @@ function Cover() {
             )
         }else { }
     }
+
+    useEffect(() => {
+        fetchData()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     return (
         <>

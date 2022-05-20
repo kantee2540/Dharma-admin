@@ -24,7 +24,6 @@ import buddhistEra from 'dayjs/plugin//buddhistEra'
 function checkUserAuthen(){
   checkUser(
     ()=>{
-      console.log("Token is OK")
     },
     ()=>{
       localStorage.removeItem('token')
