@@ -5,6 +5,8 @@ import { listCover, uploadCover, updateDefaultCover, deleteImageCover } from '..
 import { baseResource } from '../Network/Config'
 import Load from '../Library/Load'
 import { AlertContext } from '../Library/Alert'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheck, faPlusCircle, faTrash } from '@fortawesome/free-solid-svg-icons'
 
 function Cover() {
     const [isLoading, setLoading] = useState(false);
@@ -84,7 +86,7 @@ function Cover() {
                 onChange={fileInputChange}
                 hidden/>
                 <div className="upload-button" onClick={handlerClick}>
-                   <i className="fas fa-plus" style={{marginRight: 15}}></i>
+                   <FontAwesomeIcon icon={faPlusCircle} style={{marginRight: 15}}/>
                    อัพโหลดรูป
                </div>
             </div>
@@ -112,12 +114,12 @@ function PictureItem(props){
         className="picture-item">
             <div className={"select-button " + (props.isSelected === 1 ? "selected": "unselect")}
             onClick={props.onClick}>
-                { props.isSelected === 1 ? <i className="fas fa-check"></i> : null}
+                { props.isSelected === 1 ? <FontAwesomeIcon icon={faCheck}/> : null}
             </div>
             { props.isSelected !== 1 ?
             <div className="delete-button unselect"
             onClick={props.onClickDelete}>
-                <i className="fas fa-trash"></i>
+                <FontAwesomeIcon icon={faTrash}/>
             </div> : null
             }
             <div onClick={props.onClick}>

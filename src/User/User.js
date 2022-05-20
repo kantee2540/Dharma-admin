@@ -5,6 +5,8 @@ import { listUser, editUser } from '../Network/User'
 import { Link } from 'react-router-dom'
 import { AlertContext } from '../Library/Alert'
 import Load from '../Library/Load'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUserCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 
 function User() {
     const alert = useContext(AlertContext);
@@ -54,7 +56,7 @@ function User() {
            <h1>บัญชีผู้ใช้ในการดูแลระบบ</h1>
            <div id="user-item-container">
                <Link className="create-user-button" to="/user/create">
-                   <i className="fas fa-plus" style={{marginRight: 15}}></i>
+                   <FontAwesomeIcon icon={faPlusCircle} style={{marginRight: 15}}/>
                    สร้างบัญชีผู้ใช้
                </Link>
                <Row>
@@ -133,7 +135,7 @@ function UserItem(props){
     return(
         <div className="user-item" onClick={props.onClick}>
             <div className="user-icon">
-                <i className="fas fa-user-circle"></i>
+                <FontAwesomeIcon icon={faUserCircle}/>
             </div>
             <div>
                <div className="user-title">

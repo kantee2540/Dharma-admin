@@ -20,6 +20,8 @@ import UserForm from './User/UserForm'
 import dayjs from 'dayjs'
 import 'dayjs/locale/th'
 import buddhistEra from 'dayjs/plugin//buddhistEra'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 function checkUserAuthen(){
   checkUser(
@@ -81,7 +83,7 @@ function AppStack({ children, isAuth, ...rest }){
           style={{display: 'flex'}}>
             <div className="d-flex d-md-none">
               <div id="sidebar-button" onClick={()=>setSidebarOpen(!isSidebarOpen ? true : false)}>
-                <i className="fas fa-bars"></i>
+                <FontAwesomeIcon icon={faBars}/>
               </div>
             </div>
             <Sidebar 

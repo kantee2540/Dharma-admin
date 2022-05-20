@@ -7,6 +7,8 @@ import Load from '../Library/Load'
 import Default from '../assets/images/default_image.png'
 import './Sound.css'
 import dayjs from 'dayjs'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 
 function Sound() {
     const [isLoading, setLoading] = useState(false);
@@ -37,7 +39,7 @@ function Sound() {
             <h1>ฟังเสียง</h1>
             <div id="sound-container">
                 <Link className="create-sound-button" to="/sound/create">
-                   <i className="fas fa-plus" style={{marginRight: 15}}></i>
+                    <FontAwesomeIcon icon={faPlusCircle} style={{marginRight: 15}}/>
                    สร้างชุดเสียง
                </Link>
                <div>

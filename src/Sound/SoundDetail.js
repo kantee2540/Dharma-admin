@@ -8,6 +8,8 @@ import dayjs from 'dayjs'
 import Load from '../Library/Load'
 import DefaultImage from '../assets/images/default_image.png'
 import './Sound.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlayCircle, faTrash } from '@fortawesome/free-solid-svg-icons'
 
 function SoundDetail() {
     let { soundId } = useParams()
@@ -229,7 +231,7 @@ function SoundDetail() {
                                 className="preview_button"
                                 target="_blank"
                                 rel="noreferrer noopener">
-                                    <i className="fas fa-play-circle"></i>
+                                    <FontAwesomeIcon icon={faPlayCircle}/>
                                 </a>
                             </td>
                             <td>
@@ -241,7 +243,7 @@ function SoundDetail() {
                                     }else{ }
                                 }}
                                 >
-                                    <i className="fas fa-trash"></i>
+                                    <FontAwesomeIcon icon={faTrash}/>
                                 </div>
                             </td>
                         </tr>
