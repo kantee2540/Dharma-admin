@@ -10,8 +10,10 @@ function useProvideAuth(){
         login(username, password,
             (data)=>{
                 let name = data.name;
+                let email = data.email;
                 setUser(name);
                 localStorage.setItem("name", name);
+                localStorage.setItem("email", email)
                 callback();
             },
             (error)=>{
@@ -25,9 +27,14 @@ function useProvideAuth(){
             })
     }
     const signout = () =>{
-        setUser(null);
-        localStorage.removeItem("token");
-        localStorage.removeItem("name");
+        return new Promise((resolve) => {
+            setUser(null);
+            localStorage.removeItem("token");
+            localStorage.removeItem("name");
+            localStorage.removeItem("email");
+            resolve()
+        })
+        
     }
 
     const setName = (name) =>{
@@ -39,7 +46,7 @@ function useProvideAuth(){
         return token
     }
 
-    return {signin, signout, setName, getToken};
+    return {signin, signout, setName, getToken, user};
 }
 
 function ProvideAuth({ children }){

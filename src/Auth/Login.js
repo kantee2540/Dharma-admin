@@ -37,7 +37,7 @@ function Login() {
         <>
         { isLoading ? <Load/> : "" }
         { authContext.getToken() !== null ? <Redirect to="/"/> : null }
-        <div className="container">
+        <div className="container-login">
             <div id="login">
                 <div className="img-container">
                     <img src={logo} className="main-logo" alt="Logo"/>
@@ -75,8 +75,8 @@ function Login() {
                 </Form>
             </div>
             <div className="bottom-view">
-                ระบบจัดการเว็บไซต์ <a href="http://xn--12ca1b1ad6at4bbyx3hva0b9qja8g.com/" target="_blank">พระไตรปิฎกใกล้ตัว.com</a><br/>
-                สงวนลิขสิทธิ์ 2564
+                ระบบจัดการเว็บไซต์ <a href="http://xn--12ca1b1ad6at4bbyx3hva0b9qja8g.com/" target="_blank" rel='noopener noreferrer'>พระไตรปิฎกใกล้ตัว.com</a><br/>
+                สงวนลิขสิทธิ์ 2565
             </div>
         </div>
         </>

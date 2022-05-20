@@ -21,11 +21,11 @@ function UserForm() {
             createUser(email, name, password,
                 (data)=>{
                     setLoading(false)
-                    alert.setMessages("สร้างบัญชีผู้ใช้แล้ว")
+                    alert.setMessages("สร้างบัญชีผู้ใช้แล้ว", "SUCCESS")
                     history.push('/user')
                 },
                 (error)=>{
-                    alert(error.message)
+                    alert.setMessages("เกิดข้อผิดพลาดบางอย่าง", "ERROR")
                     setLoading(false)
                 }
             )

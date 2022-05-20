@@ -24,7 +24,7 @@ function Cover() {
                 setLoading(false)
             },
             (error)=>{
-                alert(error.message)
+                alert.setMessages("เกิดข้อผิดพลาดบางอย่าง", "ERROR")
             }
         )
     }
@@ -38,10 +38,10 @@ function Cover() {
         uploadCover(file,
             ()=>{
                 fetchData()
-                alert.setMessages("อัพโหลดรูปภาพสำเร็จ")
+                alert.setMessages("อัพโหลดรูปภาพสำเร็จ", "SUCCESS")
             },
             (error)=>{
-                alert(error.message)
+                alert.setMessages("เกิดข้อผิดพลาดบางอย่าง", "ERROR")
             }
         )
     }
@@ -50,10 +50,10 @@ function Cover() {
         updateDefaultCover(coverId,
             ()=>{
                 fetchData()
-                alert.setMessages("เลือกรูปนี้เป็นค่าเริ่มต้นแล้ว")
+                alert.setMessages("เลือกรูปนี้เป็นค่าเริ่มต้นแล้ว", "SUCCESS")
             },
             (error)=>{
-                alert(error.message)
+                alert.setMessages("เกิดข้อผิดพลาดบางอย่าง", "ERROR")
             })
     }
 
@@ -62,10 +62,10 @@ function Cover() {
             deleteImageCover(coverId,
                 ()=>{
                     fetchData()
-                    alert.setMessages("ลบรูปภาพแล้ว")
+                    alert.setMessages("ลบรูปภาพแล้ว", "SUCCESS")
                 },
                 (error)=>{
-                    alert(error.message)
+                    alert.setMessages("เกิดข้อผิดพลาดบางอย่าง", "ERROR")
                 }
             )
         }else { }
@@ -95,6 +95,7 @@ function Cover() {
                     image_url={baseResource+"/home_cover/"+item.cover_file}
                     onClick={()=>selectImage(item.cover_id)}
                     onClickDelete={()=>deleteImage(item.cover_id)}
+                    alt={item.cover_file}
                     />
                 </Col>
                 )}
@@ -119,7 +120,7 @@ function PictureItem(props){
             </div> : null
             }
             <div onClick={props.onClick}>
-                <img src={props.image_url} className="pic-img"/>
+                <img src={props.image_url} className="pic-img" alt={props.alt}/>
             </div>
            
         </div>

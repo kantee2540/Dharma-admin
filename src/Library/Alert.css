@@ -6,15 +6,16 @@
     top: 5px;
     right: 0px;
     overflow: hidden;
-    transition: width 0.4s ease;
+    transition: width 0.2s ease;
     border-radius: 8px 0px 0px 8px;
 }
 
 .alert-content{
     padding: 1em;
-    font-size: 20px;
+    font-size: 18px;
+    display: flex;
 }
 
-.alert-icon{
-    margin-right: 10px;
+.alert-content .icon{
+    margin-right: 13px;
 }

@@ -27,7 +27,7 @@ function User() {
                 setItems(data);
             },
             (error)=>{
-                alert(error.message)
+                alert.setMessages("เกิดข้อผิดพลาดบางอย่าง", "ERROR")
             }
         )
     }
@@ -36,10 +36,10 @@ function User() {
         editUser(email, name, selectedUser.userId,
             (data)=>{
                 callback(data)
-                alert.setMessages("แก้ไขข้อมูลผู้ใช้งานสำเร็จ")
+                alert.setMessages("แก้ไขข้อมูลผู้ใช้งานสำเร็จ", "SUCCESS")
             },
             (error)=>{
-                alert(error.message)
+                alert.setMessages("เกิดข้อผิดพลาดบางอย่าง", "ERROR")
                 setModalLoad(false)
             }
         )

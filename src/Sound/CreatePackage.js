@@ -17,12 +17,12 @@ function CreatePackage() {
         createSound(name,
             ()=>{
                 setLoading(false);
-                alert.setMessages("สร้างชุดไฟล์เสียงแล้ว")
+                alert.setMessages("สร้างชุดไฟล์เสียงแล้ว", "SUCCESS")
                 history.push("/sound");
             },
             (error)=>{
                 setLoading(false);
-                alert(error.message);
+                alert.setMessages("เกิดข้อผิดพลาดบางอย่าง", "ERROR")
             })
     }
 

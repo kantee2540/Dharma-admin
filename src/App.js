@@ -5,6 +5,7 @@ import { checkUser } from './Network/AuthNetwork'
 import './App.css';
 import Sidebar from './Library/Sidebar'
 import { ProvideAlert } from './Library/Alert'
+import CookieConsent from './Library/CookieConsent'
 
 import Home from './Home/Home'
 import Login from './Auth/Login'
@@ -33,6 +34,8 @@ function checkUserAuthen(){
 }
 
 function App() {
+  const [isCookieAccepted, setIsCookieAccepted] = useState(localStorage.getItem('cookie-accept') === 'true' ? true: false)
+
   useEffect(()=>{
     dayjs.locale("th")
     dayjs.extend(buddhistEra)
@@ -42,17 +45,27 @@ function App() {
     }
   }, [])
 
+  const onAcceptCookie = () => {
+    localStorage.setItem('cookie-accept', 'true')
+    setIsCookieAccepted(true)
+  }
+
   return (
-    <ProvideAuth>
-      <BrowserRouter>
-        <Switch>
-          <Route path="/login">
-            <Login/>
-          </Route>
-          <AppStack path="/"/>
-        </Switch>
-      </BrowserRouter>
-    </ProvideAuth>
+    <div>
+      <ProvideAuth>
+        <BrowserRouter>
+          <Switch>
+            <Route path="/login">
+              <Login/>
+            </Route>
+            <AppStack path="/"/>
+          </Switch>
+        </BrowserRouter>
+      </ProvideAuth>
+      <CookieConsent 
+      isAccepted={isCookieAccepted}
+      onAccept={()=>onAcceptCookie()}/>
+    </div>
   );
 }
 

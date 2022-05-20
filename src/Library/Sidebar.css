@@ -5,7 +5,7 @@
     height: 100vh;
     flex-direction: column;
     position: fixed;
-    z-index: 56;
+    z-index: 2;
     transition: width 0.2s;
 }
 
@@ -20,8 +20,11 @@
     margin-top: 1em;
 }
 
-.name-text{
+.sidebar-head{
     text-align: center;
+}
+
+.name-text{
     font-size: 20px;
     margin-top: 1em;
 }

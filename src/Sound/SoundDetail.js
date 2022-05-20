@@ -38,7 +38,7 @@ function SoundDetail() {
                 }
             },
             (error)=>{
-                alert(error)
+                alert.setMessages("เกิดข้อผิดพลาดบางอย่าง", "ERROR")
                 setLoading(false)
             })
     }
@@ -48,11 +48,11 @@ function SoundDetail() {
         uploadFileCover(detail.id, selectedImage,
             ()=>{
                 setImage(null);
-                alert.setMessages("เปลี่ยนปกชุดไฟล์เสียงสำเร็จ")
+                alert.setMessages("เปลี่ยนปกชุดไฟล์เสียงสำเร็จ", 'SUCCESS')
                 fetchData();
             },
             (error)=>{
-                alert(error.message)
+                alert.setMessages("เกิดข้อผิดพลาดบางอย่าง", "ERROR")
                 setLoading(false)
             })
     }
@@ -62,10 +62,10 @@ function SoundDetail() {
         updateName(detail.id, name,
             ()=>{
                 fetchData();
-                alert.setMessages("เปลี่ยนชื่อชุดไฟล์เสียงสำเร็จ")
+                alert.setMessages("เปลี่ยนชื่อชุดไฟล์เสียงสำเร็จ", 'SUCCESS')
             },
             (error)=>{
-                alert(error.message)
+                alert.setMessages("เกิดข้อผิดพลาดบางอย่าง", "ERROR")
                 setLoading(false)
             }
         )
@@ -76,10 +76,10 @@ function SoundDetail() {
         uploadSound(detail.id, selectedSound,
             ()=>{
                 fetchData()
-                alert.setMessages("อัพโหลดไฟล์เสียงสำเร็จ")
+                alert.setMessages("อัพโหลดไฟล์เสียงสำเร็จ", 'SUCCESS')
             },
             (error)=>{
-                alert(error.message)
+                alert.setMessages("เกิดข้อผิดพลาดบางอย่าง", "ERROR")
                 setLoading(false)
             }
         )
@@ -90,10 +90,10 @@ function SoundDetail() {
         deleteSoundFile(detail.id, soundId,
             ()=>{
                 fetchData()
-                alert.setMessages("ลบไฟล์เสียงแล้ว")
+                alert.setMessages("ลบไฟล์เสียงแล้ว", 'SUCCESS')
             },
             (error)=>{
-                alert(error.message)
+                alert.setMessages("เกิดข้อผิดพลาดบางอย่าง", "ERROR")
                 setLoading(false)
             }
         )
@@ -104,10 +104,10 @@ function SoundDetail() {
         deletePackage(detail.id,
             ()=>{
                 history.push("/sound");
-                alert.setMessages("ลบชุดไฟล์เสียงสำเร็จ")
+                alert.setMessages("ลบชุดไฟล์เสียงสำเร็จ", 'SUCCESS')
             },
             (error)=>{
-                alert(error.message)
+                alert.setMessages("เกิดข้อผิดพลาดบางอย่าง", "ERROR")
                 setLoading(false)
             })
     }
